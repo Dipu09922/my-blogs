@@ -21,11 +21,11 @@ const Blog = ({blog,handleBookMark,handleMarkAsRead}) => {
     <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
     <div className="flex">
       {
-       blog.hashtags.map(has=><p>{has}</p>)
+       blog.hashtags.map(has=><p key={has}>{has}</p>)
       }
     </div>
     <div className="card-actions justify-end">
-      <button onClick={()=>handleMarkAsRead(blog.reading_time)} className="btn btn-primary">mark as read</button> 
+      <button onClick={()=>handleMarkAsRead(blog.reading_time,blog.id)} className="btn btn-primary">mark as read</button> 
     </div>
   </div>
 </div>
